@@ -20,8 +20,10 @@ html, body {
 	box-sizing: border-box;
 	padding: 10px;
 }
-.memo-bg > textarea {
-	display: border-box;
+.memo {
+	min-width: 100%;
+	max-width: 100%;
+	tab-size: 4;
 	min-height: 100%;
 	max-height: 100%;
 	resize: none;
@@ -29,14 +31,6 @@ html, body {
 	letter-spacing: 0.1em;
 	border: none;
 	outline: none;
-}
-.number {
-	width: auto;
-}
-.memo {
-	min-width: 100%;
-	max-width: 100%;
-	tab-size: 4;
 }
 .memo::-webkit-scrollbar {
 	width: 6px;
