@@ -1,18 +1,22 @@
 {
 	"name": "memonw",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "",
 	"main": "app/index.html",
 	"scripts": {
 		"start": "nw app/",
-		"build": "nwbuild -p win32,win64 -o dist/ app/",
+		"build:win": "nwbuild -p win32,win64 -o dist/ app/",
+		"build:mac": "nwbuild -p osx64 -o dist/ app/",
+		"build:linux": "nwbuild -p linux32,linux64 -o dist/ app/",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",
 	"license": "ISC",
-	"dependencies": {},
+	"dependencies": {
+		"fs-extra": "^7.0.1"
+	},
 	"devDependencies": {
-		"nw": "^0.36.1",
+		"nw": "^0.37.4-sdk",
 		"nw-builder": "^3.5.7"
 	}
 }

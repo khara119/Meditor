@@ -26,11 +26,16 @@ Mac, Linux用にも生成できます。
 
 1. パッケージング
 ```
-% npm run build
+# Windows用パッケージング
+% npm run build:win
+
+# Mac用パッケージング
+% npm run build:mac
+
+# Linux用パッケージング
+% npm run build:linux
 ```
 でパッケージング化できます。
-デフォルトではWindows用のオプションしか追加していないので、
-お使いの環境に合わせて`package.json`ファイルの`build`スクリプトを
-修正してから上記コマンドを実行してください。
+
 ビルドには`nw-builder`を使用しています。
 

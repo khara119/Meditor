@@ -1,7 +1,5 @@
 {
 	"name": "MemoNW",
-	"version": "1.0.0",
-	"main": "index.html",
-	"window": {
-	}
+	"version": "1.1.0",
+	"main": "index.html"
 }
