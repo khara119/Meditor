@@ -39,6 +39,37 @@ window.onload = () => {
 	saveFileAsElement.addEventListener('change', saveFileCallback);
 };
 
+nw.Window.get().on('close', () => {
+	const textarea = document.getElementById('memo');
+	if (!textarea) {
+		nw.Window.get().close(true);
+	}
+
+	// 初期状態から変わっていなければそのまま閉じる
+	if (textarea.value == initializedText) {
+		console.log('hoge');
+		nw.Window.get().close(true);
+		return;
+	}
+	console.log('huga');
+
+	const message = '初期状態から変更されています。<br>' +
+		'現在の変更を破棄しますか？';
+
+	let buttonHTML = '';
+	const buttons = ['破棄', 'キャンセル'];
+	for (let i=0; i<buttons.length; i++) {
+		buttonHTML += '<button class="button" data-index="' + i + '">' + buttons[i] + '</button>\n';
+	}
+
+	const _callback = () => {
+		nw.Window.get().close(true);
+	};
+
+	// メッセージ画面にて確認を行う
+	showMessageBox(message, buttonHTML, _callback);
+});
+
 // 新規作成
 const newFile = () => {
 	const textarea = document.getElementById('memo');
