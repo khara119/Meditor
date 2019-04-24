@@ -98,3 +98,6 @@ html, body {
 .button:focus {
 	outline: none;
 }
+.hidden {
+	display: none;
+}
