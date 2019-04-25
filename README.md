@@ -1,4 +1,4 @@
-# MemoNW
+# Meditor
 
 シンプルなメモ帳アプリ
 
