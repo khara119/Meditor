@@ -5,9 +5,10 @@
 	"main": "app/index.html",
 	"scripts": {
 		"start": "nw app/",
-		"build:win": "nwbuild -p win32,win64 -o dist/ app/",
-		"build:mac": "nwbuild -p osx64 -o dist/ app/",
-		"build:linux": "nwbuild -p linux32,linux64 -o dist/ app/",
+		"build:win": "npm run build:prepare && nwbuild -p win32,win64 -o dist/ app/",
+		"build:mac": "npm run build:prepare && nwbuild -p osx64 -o dist/ app/",
+		"build:linux": "npm run build:prepare && nwbuild -p linux32,linux64 -o dist/ app/",
+		"build:prepare": "mkdir build && cp package.json package-lock.json build/ && cd build && npm install --production && cd ../ && cp -r build/node_modules app/ && rm -rf build",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",
