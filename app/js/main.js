@@ -195,8 +195,8 @@ const saveFileCore = filePath => {
 	document.getElementById('save-file-as').nwsaveas = filePath;
 };
 
-// MemoNWを終了する
-const closeMemoNW = () => {
+// Meditorを終了する
+const closeMeditor = () => {
 	nw.Window.get().close();
 };
 
@@ -278,7 +278,7 @@ const generateMenuBar = () => {
 	}, {
 		// 閉じる
 		label: 'Close',
-		click: closeMemoNW,
+		click: closeMeditor,
 	}];
 
 	// 「File」メニューの子要素を生成
